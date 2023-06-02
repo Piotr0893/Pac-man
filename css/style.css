@@ -1,0 +1,1064 @@
+:root {
+	--black: #000000;
+	--blue: #1919a6;
+	--yellow: #e0e246;
+	--red: #c74e4e;
+	--border: 2px double #1919a6;
+	--outline: 1px solid red;
+	--monster-blue: teal;
+	--white: aliceblue;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	height: 100vh;
+}
+.map {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	height: 500px;
+	border: 7px double var(--blue);
+	border-radius: 8px;
+	background: var(--black);
+}
+.map div {
+	border-radius: 8px;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+.wide-rectangle-1 {
+	border: var(--border);
+	top: 12.5%;
+	left: 21%;
+	width: 100px;
+	height: 25px;
+	-webkit-box-reflect: right 176%;
+}
+.wide-rectangle-2 {
+	border: var(--border);
+	top: 87.5%;
+	left: 21%;
+	width: 100px;
+	height: 25px;
+	-webkit-box-reflect: right 178%;
+}
+.square {
+	border: var(--border);
+	top: 50.5%;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+}
+.square-line {
+	position: absolute;
+	top: -2px;
+	left: 16px;
+	width: 26px;
+	height: 2px;
+	border: none;
+	background-color: aliceblue;
+}
+.map .U-object {
+	position: relative;
+	top: 56.5%;
+	left: 20.5%;
+	transform: translate(-50%, -50%);
+	width: 100px;
+	height: 100px;
+	border: none;
+	-webkit-box-reflect: right 185px;
+}
+.U-object span {
+	border: var(--border);
+	position: absolute;
+	background-color: var(--black);
+}
+.U-first {
+	top: 26.5px;
+	left: 15px;
+	border-radius: 8px;
+	width: 85px;
+	height: 25px;
+	z-index: -1;
+}
+.U-second {
+	top: -13.5px;
+	width: 25px;
+	height: 65px;
+	border-radius: 8px 8px 0px 8px;
+}
+.U-third {
+	top: -13.5px;
+	left: 80px;
+	width: 25px;
+	height: 65px;
+	border-radius: 8px 8px 8px 0px;
+}
+.U-object .U-line-second {
+	top: 28.5px;
+	left: 23.2px;
+	width: 5px;
+	height: 21px;
+	border: none;
+}
+.U-object .U-line-third {
+	top: 28.5px;
+	left: 77.5px;
+	width: 5px;
+	height: 21px;
+	border: none;
+}
+
+.map .L-object-A {
+	position: absolute;
+	top: 26.5%;
+	left: 25.5%;
+	transform: translate(-50%, -50%);
+	width: 150px;
+	height: 100px;
+	border: none;
+}
+.L-object-A span {
+	border: var(--border);
+	position: absolute;
+	background-color: var(--black);
+}
+.L-first-A {
+	top: 51px;
+	left: 0px;
+	border-radius: 8px;
+	width: 181px;
+	height: 25px;
+	z-index: -1;
+}
+.L-second-A {
+	border-radius: 8px 8px 8px 0px;
+	width: 25px;
+	height: 103px;
+	top: -27.2px;
+	left: 160px;
+}
+.L-object-A .L-line-A {
+	top: 53.2px;
+	left: 160px;
+	width: 4px;
+	height: 21px;
+	border: none;
+}
+.map .L-object-B {
+	position: absolute;
+	top: 26.5%;
+	left: 66%;
+	transform: translate(-50%, -50%);
+	width: 150px;
+	height: 100px;
+	border: none;
+}
+.L-object-B span {
+	border: var(--border);
+	position: absolute;
+	background-color: var(--black);
+}
+.L-first-B {
+	top: 51px;
+	left: 0px;
+	border-radius: 8px;
+	width: 181px;
+	height: 25px;
+	z-index: -1;
+}
+.L-second-B {
+	border-radius: 8px 8px 0px 8px;
+	width: 25px;
+	height: 103px;
+	top: -27.2px;
+	left: 0px;
+}
+
+.L-object-B .L-line-B {
+	top: 53.2px;
+	left: 23px;
+	width: 4px;
+	height: 21px;
+	border: none;
+}
+.map .L-object-C {
+	position: absolute;
+	top: 66.5%;
+	left: 34.5%;
+	transform: translate(-50%, -50%);
+	width: 150px;
+	height: 100px;
+	border: none;
+}
+.L-object-C span {
+	border: var(--border);
+	position: absolute;
+	background-color: var(--black);
+}
+.L-first-C {
+	top: 61px;
+	left: -41px;
+	border-radius: 8px;
+	width: 181px;
+	height: 25px;
+}
+.L-second-C {
+	top: 61px;
+	left: 121px;
+	border-radius: 0px 8px 8px 8px;
+	width: 25px;
+	height: 103px;
+}
+.L-object-C .L-line-C {
+	top: 63px;
+	left: 120px;
+	width: 4px;
+	height: 21px;
+	border: none;
+}
+
+.map .L-object-D {
+	position: absolute;
+	top: 66.5%;
+	left: 75.5%;
+	transform: translate(-50%, -50%);
+	width: 150px;
+	height: 100px;
+	border: none;
+}
+.L-object-D span {
+	border: var(--border);
+	position: absolute;
+	background-color: var(--black);
+}
+.L-first-D {
+	top: 61px;
+	left: -41px;
+	border-radius: 8px;
+	width: 181px;
+	height: 25px;
+}
+.L-second-D {
+	top: 61px;
+	left: -41px;
+	border-radius: 8px 0px 8px 8px;
+	width: 25px;
+	height: 103px;
+}
+.L-object-D .L-line-D {
+	top: 63px;
+	left: -18px;
+	width: 4px;
+	height: 21px;
+	border: none;
+}
+.map .pac-man {
+	position: absolute;
+	top: 34.5%;
+	left: 2.2%;
+	transform: rotate(-45deg);
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border-left: 15px solid var(--yellow);
+	border-top: 15px solid var(--yellow);
+	animation: pac-man-animation 10s 0.5s linear 1,
+		pac-man-mouth 10s 0.5s linear infinite;
+}
+.map .monster-1 {
+	position: absolute;
+	top: 4%;
+	left: 80%;
+	width: 30px;
+	height: 24px;
+	border-radius: 50% 50% 0 0;
+	background: var(--red);
+	z-index: 1;
+	animation: monster-animation-1 10s 0.5s linear 1;
+}
+.monster-1::before {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 0%;
+	width: 100%;
+	height: 10px;
+	background: linear-gradient(
+			-45deg,
+			transparent 33.333%,
+			var(--red) 33.333%,
+			var(--red) 66.667%,
+			transparent 66.667%
+		),
+		linear-gradient(
+			45deg,
+			transparent 33.333%,
+			var(--red) 33.333%,
+			var(--red) 66.667%,
+			transparent 66.667%
+		);
+	background-size: 10px 20px;
+	transform: rotate(180deg);
+}
+.monster-eyes-1 {
+	position: absolute;
+	top: 31%;
+	left: 20%;
+	border-radius: 45%;
+	background: var(--black);
+	width: 5px;
+	height: 5px;
+	box-shadow: 0 0 0 3.5px var(--white);
+	-webkit-box-reflect: right 8px;
+}
+
+.map .monster-2 {
+	position: relative;
+	top: 73.5%;
+	left: 12%;
+	width: 30px;
+	height: 24px;
+	border-radius: 50% 50% 0 0;
+	background: var(--monster-blue);
+	z-index: 1;
+	animation: monster-animation-2 10s 0.5s linear 1;
+}
+
+.monster-2::before {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 0%;
+	width: 100%;
+	height: 10px;
+	background: linear-gradient(
+			-45deg,
+			transparent 33.333%,
+			var(--monster-blue) 33.333%,
+			var(--monster-blue) 66.667%,
+			transparent 66.667%
+		),
+		linear-gradient(
+			45deg,
+			transparent 33.333%,
+			var(--monster-blue) 33.333%,
+			var(--monster-blue) 66.667%,
+			transparent 66.667%
+		);
+	background-size: 10px 20px;
+	transform: rotate(180deg);
+}
+.monster-eyes-2 {
+	position: absolute;
+	top: 25%;
+	left: 20%;
+	border-radius: 50%;
+	background-color: var(--black);
+	width: 5px;
+	height: 5px;
+	box-shadow: 0 0 0 3.5px var(--white);
+	-webkit-box-reflect: right 8px;
+}
+
+@keyframes pac-man-animation {
+	0% {
+		transform: rotate(-45deg);
+	}
+	20% {
+		transform: translateX(523%) rotate(-45deg);
+	}
+	21% {
+		transform: translateX(523%) rotate(45deg);
+	}
+	40% {
+		transform: translateX(523%) translateY(400%) rotate(45deg);
+	}
+	41% {
+		transform: translateX(523%) translateY(400%) rotate(-45deg);
+	}
+	80% {
+		transform: translateX(1458%) translateY(400%) rotate(-45deg);
+	}
+	81% {
+		transform: translateX(1458%) translateY(400%) rotate(45deg);
+	}
+	100% {
+		transform: translateX(1458%) translateY(960%) rotate(45deg);
+	}
+}
+@keyframes monster-animation-1 {
+	20% {
+		transform: translateX(-735%) translateY(-40%);
+	}
+	30% {
+		transform: translateX(-735%) translateY(265%);
+	}
+	50% {
+		transform: translateX(-1265%) translateY(265%);
+	}
+	70% {
+		transform: translateX(-1265%) translateY(1455%);
+	}
+	90% {
+		transform: translateX(-725%) translateY(1455%);
+	}
+	100% {
+		transform: translateX(-735%) translateY(1800%);
+	}
+}
+@keyframes monster-animation-2 {
+	10% {
+		transform: translateX(375%) translateY(-40%);
+	}
+	20% {
+		transform: translateX(375%) translateY(-380%);
+	}
+	30% {
+		transform: translateX(-155%) translateY(-380%);
+	}
+	50% {
+		transform: translateX(-155%) translateY(-700%);
+	}
+	80% {
+		transform: translateX(365%) translateY(-700%);
+	}
+	100% {
+		transform: translateX(365%) translateY(-1200%);
+	}
+}
+@keyframes pac-man-mouth {
+	0% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	3% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	6% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	9% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	12% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	15% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	18% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	21% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	24% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	27% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	30% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	33% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	36% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	39% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	42% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	45% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	48% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	51% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	54% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	57% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	60% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	63% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	66% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	69% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	72% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	75% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	78% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	81% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	84% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	87% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	90% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	93% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	96% {
+		border-left: 30px solid var(--yellow);
+		border-top: 30px solid var(--yellow);
+	}
+	99% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+	100% {
+		border-left: 15px solid var(--yellow);
+		border-top: 15px solid var(--yellow);
+	}
+}
+
+.bounties {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(12, 1fr);
+	grid-column-gap: 40px;
+	grid-row-gap: 40px;
+}
+
+.bounties div {
+	background: var(--yellow);
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+}
+.bounties .div1 {
+	grid-area: 1 / 12 / 2 / 13;
+	width: 15px;
+	height: 15px;
+}
+.div2 {
+	grid-area: 1 / 11 / 2 / 12;
+}
+.div3 {
+	grid-area: 1 / 10 / 2 / 11;
+}
+.div4 {
+	grid-area: 1 / 9 / 2 / 10;
+}
+.div5 {
+	grid-area: 1 / 8 / 2 / 9;
+}
+.div6 {
+	grid-area: 1 / 7 / 2 / 8;
+}
+.div7 {
+	grid-area: 1 / 6 / 2 / 7;
+}
+.div8 {
+	grid-area: 1 / 5 / 2 / 6;
+}
+.div9 {
+	grid-area: 1 / 4 / 2 / 5;
+}
+.div10 {
+	grid-area: 1 / 3 / 2 / 4;
+}
+.div11 {
+	grid-area: 1 / 2 / 2 / 3;
+}
+.bounties .div12 {
+	grid-area: 1 / 1 / 2 / 2;
+	width: 15px;
+	height: 15px;
+}
+.div13 {
+	grid-area: 2 / 1 / 3 / 2;
+}
+.div14 {
+	grid-area: 2 / 2 / 3 / 3;
+}
+.div15 {
+	grid-area: 2 / 3 / 3 / 4;
+}
+.div16 {
+	grid-area: 2 / 4 / 3 / 5;
+}
+.div17 {
+	grid-area: 2 / 5 / 3 / 6;
+}
+.div18 {
+	grid-area: 2 / 6 / 3 / 7;
+}
+.div19 {
+	grid-area: 2 / 7 / 3 / 8;
+}
+.div20 {
+	grid-area: 2 / 8 / 3 / 9;
+}
+.div21 {
+	grid-area: 2 / 9 / 3 / 10;
+}
+.div22 {
+	grid-area: 2 / 10 / 3 / 11;
+}
+.div23 {
+	grid-area: 2 / 11 / 3 / 12;
+}
+.div24 {
+	grid-area: 2 / 12 / 3 / 13;
+}
+.div25 {
+	grid-area: 3 / 12 / 4 / 13;
+}
+.div26 {
+	grid-area: 3 / 11 / 4 / 12;
+}
+.div27 {
+	grid-area: 3 / 10 / 4 / 11;
+}
+.div28 {
+	grid-area: 3 / 9 / 4 / 10;
+}
+.div29 {
+	grid-area: 3 / 8 / 4 / 9;
+}
+.div30 {
+	grid-area: 3 / 7 / 4 / 8;
+}
+.div31 {
+	grid-area: 3 / 6 / 4 / 7;
+}
+.div32 {
+	grid-area: 3 / 5 / 4 / 6;
+}
+.div33 {
+	grid-area: 3 / 4 / 4 / 5;
+}
+.div34 {
+	grid-area: 3 / 3 / 4 / 4;
+}
+.div35 {
+	grid-area: 3 / 2 / 4 / 3;
+}
+.div36 {
+	grid-area: 3 / 1 / 4 / 2;
+}
+.div37 {
+	grid-area: 4 / 1 / 5 / 2;
+}
+.div38 {
+	grid-area: 4 / 2 / 5 / 3;
+}
+.div39 {
+	grid-area: 4 / 3 / 5 / 4;
+}
+.div40 {
+	grid-area: 4 / 4 / 5 / 5;
+}
+.div41 {
+	grid-area: 4 / 5 / 5 / 6;
+}
+.div42 {
+	grid-area: 4 / 6 / 5 / 7;
+}
+.div43 {
+	grid-area: 4 / 7 / 5 / 8;
+}
+.div44 {
+	grid-area: 4 / 8 / 5 / 9;
+}
+.div45 {
+	grid-area: 4 / 9 / 5 / 10;
+}
+.div46 {
+	grid-area: 4 / 10 / 5 / 11;
+}
+.div47 {
+	grid-area: 4 / 11 / 5 / 12;
+}
+.div48 {
+	grid-area: 4 / 12 / 5 / 13;
+}
+.div49 {
+	grid-area: 5 / 12 / 6 / 13;
+}
+.div50 {
+	grid-area: 5 / 11 / 6 / 12;
+}
+.div51 {
+	grid-area: 5 / 10 / 6 / 11;
+}
+.div52 {
+	grid-area: 5 / 9 / 6 / 10;
+}
+.div53 {
+	grid-area: 5 / 8 / 6 / 9;
+}
+.div54 {
+	grid-area: 5 / 7 / 6 / 8;
+}
+.div55 {
+	grid-area: 5 / 6 / 6 / 7;
+}
+.div56 {
+	grid-area: 5 / 5 / 6 / 6;
+	animation: eat-bounty 0.3s forwards 4s;
+}
+.div57 {
+	grid-area: 5 / 4 / 6 / 5;
+	animation: eat-bounty 0.3s forwards 3s;
+}
+.div58 {
+	grid-area: 5 / 3 / 6 / 4;
+	animation: eat-bounty 0.3s forwards 2s;
+}
+.div59 {
+	grid-area: 5 / 2 / 6 / 3;
+	animation: eat-bounty 0.3s forwards 1s;
+}
+.div60 {
+	grid-area: 5 / 1 / 6 / 2;
+	animation: eat-bounty 0.3s forwards 0s;
+}
+.div61 {
+	grid-area: 6 / 1 / 7 / 2;
+}
+.div62 {
+	grid-area: 6 / 2 / 7 / 3;
+}
+.div63 {
+	grid-area: 6 / 3 / 7 / 4;
+}
+.div64 {
+	grid-area: 6 / 4 / 7 / 5;
+}
+.div65 {
+	grid-area: 6 / 5 / 7 / 6;
+	animation: eat-bounty 0.3s forwards 6s;
+}
+.div66 {
+	grid-area: 6 / 6 / 7 / 7;
+}
+.div67 {
+	grid-area: 6 / 7 / 7 / 8;
+}
+.div68 {
+	grid-area: 6 / 8 / 7 / 9;
+}
+.div69 {
+	grid-area: 6 / 9 / 7 / 10;
+}
+.div70 {
+	grid-area: 6 / 10 / 7 / 11;
+}
+.div71 {
+	grid-area: 6 / 11 / 7 / 12;
+}
+.div72 {
+	grid-area: 6 / 12 / 7 / 13;
+}
+.div73 {
+	grid-area: 7 / 12 / 8 / 13;
+}
+.div74 {
+	grid-area: 7 / 11 / 8 / 12;
+}
+.div75 {
+	grid-area: 7 / 10 / 8 / 11;
+}
+.div76 {
+	grid-area: 7 / 9 / 8 / 10;
+}
+.div77 {
+	grid-area: 7 / 8 / 8 / 9;
+}
+.div78 {
+	grid-area: 7 / 7 / 8 / 8;
+}
+.div79 {
+	grid-area: 7 / 6 / 8 / 7;
+}
+.div80 {
+	grid-area: 7 / 5 / 8 / 6;
+	animation: eat-bounty 0.3s forwards 7.5s;
+}
+.div81 {
+	grid-area: 7 / 4 / 8 / 5;
+}
+.div82 {
+	grid-area: 7 / 3 / 8 / 4;
+}
+.div83 {
+	grid-area: 7 / 2 / 8 / 3;
+}
+.div84 {
+	grid-area: 7 / 1 / 8 / 2;
+}
+.div85 {
+	grid-area: 8 / 1 / 9 / 2;
+}
+.div86 {
+	grid-area: 8 / 2 / 9 / 3;
+}
+.div87 {
+	grid-area: 8 / 3 / 9 / 4;
+}
+.div88 {
+	grid-area: 8 / 4 / 9 / 5;
+}
+.div89 {
+	grid-area: 8 / 5 / 9 / 6;
+	animation: eat-bounty 0.3s forwards 9s;
+}
+.div90 {
+	grid-area: 8 / 6 / 9 / 7;
+	animation: eat-bounty 0.3s forwards 10s;
+}
+.div91 {
+	grid-area: 8 / 7 / 9 / 8;
+	animation: eat-bounty 0.3s forwards 11s;
+}
+.div92 {
+	grid-area: 8 / 8 / 9 / 9;
+	animation: eat-bounty 0.3s forwards 12s;
+}
+.div93 {
+	grid-area: 8 / 9 / 9 / 10;
+	animation: eat-bounty 0.3s forwards 13s;
+}
+.div94 {
+	grid-area: 8 / 10 / 9 / 11;
+	animation: eat-bounty 0.3s forwards 14s;
+}
+.div95 {
+	grid-area: 8 / 11 / 9 / 12;
+	animation: eat-bounty 0.3s forwards 15s;
+}
+.div96 {
+	grid-area: 8 / 12 / 9 / 13;
+	animation: eat-bounty 0.3s forwards 16s;
+}
+.div97 {
+	grid-area: 9 / 12 / 10 / 13;
+	animation: eat-bounty 0.3s forwards 17s;
+}
+.div98 {
+	grid-area: 9 / 11 / 10 / 12;
+}
+.div99 {
+	grid-area: 9 / 10 / 10 / 11;
+}
+.div100 {
+	grid-area: 9 / 9 / 10 / 10;
+}
+.div101 {
+	grid-area: 9 / 8 / 10 / 9;
+}
+.div102 {
+	grid-area: 9 / 7 / 10 / 8;
+}
+.div103 {
+	grid-area: 9 / 6 / 10 / 7;
+}
+.div104 {
+	grid-area: 9 / 5 / 10 / 6;
+}
+.div105 {
+	grid-area: 9 / 4 / 10 / 5;
+}
+.div106 {
+	grid-area: 9 / 3 / 10 / 4;
+}
+.div107 {
+	grid-area: 9 / 2 / 10 / 3;
+}
+.div108 {
+	grid-area: 9 / 1 / 10 / 2;
+}
+.div109 {
+	grid-area: 10 / 1 / 11 / 2;
+}
+.div110 {
+	grid-area: 10 / 2 / 11 / 3;
+}
+.div111 {
+	grid-area: 10 / 3 / 11 / 4;
+}
+.div112 {
+	grid-area: 10 / 4 / 11 / 5;
+}
+.div113 {
+	grid-area: 10 / 5 / 11 / 6;
+}
+.div114 {
+	grid-area: 10 / 6 / 11 / 7;
+}
+.div115 {
+	grid-area: 10 / 7 / 11 / 8;
+}
+.div116 {
+	grid-area: 10 / 8 / 11 / 9;
+}
+.div117 {
+	grid-area: 10 / 9 / 11 / 10;
+}
+.div118 {
+	grid-area: 10 / 10 / 11 / 11;
+}
+.div119 {
+	grid-area: 10 / 11 / 11 / 12;
+}
+.div120 {
+	grid-area: 10 / 12 / 11 / 13;
+	animation: eat-bounty 0.3s forwards 18s;
+}
+.div121 {
+	grid-area: 11 / 12 / 12 / 13;
+	animation: eat-bounty 0.3s forwards 18s;
+}
+.div122 {
+	grid-area: 11 / 11 / 12 / 12;
+}
+.div123 {
+	grid-area: 11 / 10 / 12 / 11;
+}
+.div124 {
+	grid-area: 11 / 9 / 12 / 10;
+}
+.div125 {
+	grid-area: 11 / 8 / 12 / 9;
+}
+.div126 {
+	grid-area: 11 / 7 / 12 / 8;
+}
+.div127 {
+	grid-area: 11 / 6 / 12 / 7;
+}
+.div128 {
+	grid-area: 11 / 5 / 12 / 6;
+}
+.div129 {
+	grid-area: 11 / 4 / 12 / 5;
+}
+.div130 {
+	grid-area: 11 / 3 / 12 / 4;
+}
+.div131 {
+	grid-area: 11 / 2 / 12 / 3;
+}
+.div132 {
+	grid-area: 11 / 1 / 12 / 2;
+}
+.bounties .div133 {
+	grid-area: 12 / 1 / 13 / 2;
+	width: 15px;
+	height: 15px;
+}
+.div134 {
+	grid-area: 12 / 2 / 13 / 3;
+}
+.div135 {
+	grid-area: 12 / 3 / 13 / 4;
+}
+.div136 {
+	grid-area: 12 / 4 / 13 / 5;
+}
+.div137 {
+	grid-area: 12 / 5 / 13 / 6;
+}
+.div138 {
+	grid-area: 12 / 6 / 13 / 7;
+}
+.div139 {
+	grid-area: 12 / 7 / 13 / 8;
+}
+.div140 {
+	grid-area: 12 / 8 / 13 / 9;
+}
+.div141 {
+	grid-area: 12 / 9 / 13 / 10;
+}
+.div142 {
+	grid-area: 12 / 10 / 13 / 11;
+}
+.div143 {
+	grid-area: 12 / 11 / 13 / 12;
+}
+.bounties .div144 {
+	grid-area: 12 / 12 / 13 / 13;
+	animation: eat-bounty 0.3s forwards 17s;
+	width: 15px;
+	height: 15px;
+}
+
+@keyframes eat-bounty {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
