@@ -2,7 +2,7 @@
 	--black: #000000;
 	--blue: #1919a6;
 	--yellow: #e0e246;
-	--red: #c74e4e;
+	--monster-red: #c74e4e;
 	--border: 2px double #1919a6;
 	--outline: 1px solid red;
 	--monster-blue: teal;
@@ -58,7 +58,7 @@ body {
 .square-line {
 	position: absolute;
 	top: -2px;
-	left: 16px;
+	left: 15px;
 	width: 26px;
 	height: 2px;
 	border: none;
@@ -269,21 +269,21 @@ body {
 	border-radius: 50%;
 	border-left: 15px solid var(--yellow);
 	border-top: 15px solid var(--yellow);
-	animation: pac-man-animation 10s 0.5s linear 1,
-		pac-man-mouth 10s 0.5s linear infinite;
+	animation: pac-man-animation 90s 0.5s linear 1 forwards,
+		pac-man-mouth 0.3s 0.5s linear infinite alternate-reverse;
 }
-.map .monster-1 {
+.map .monster-red {
 	position: absolute;
 	top: 4%;
 	left: 80%;
 	width: 30px;
 	height: 24px;
 	border-radius: 50% 50% 0 0;
-	background: var(--red);
+	background: var(--monster-red);
 	z-index: 1;
-	animation: monster-animation-1 10s 0.5s linear 1;
+	animation: monster-animation-red 10s 0.5s linear 1;
 }
-.monster-1::before {
+.monster-red::before {
 	content: '';
 	position: absolute;
 	bottom: -10px;
@@ -293,21 +293,21 @@ body {
 	background: linear-gradient(
 			-45deg,
 			transparent 33.333%,
-			var(--red) 33.333%,
-			var(--red) 66.667%,
+			var(--monster-red) 33.333%,
+			var(--monster-red) 66.667%,
 			transparent 66.667%
 		),
 		linear-gradient(
 			45deg,
 			transparent 33.333%,
-			var(--red) 33.333%,
-			var(--red) 66.667%,
+			var(--monster-red) 33.333%,
+			var(--monster-red) 66.667%,
 			transparent 66.667%
 		);
 	background-size: 10px 20px;
 	transform: rotate(180deg);
 }
-.monster-eyes-1 {
+.monster-eyes-red {
 	position: absolute;
 	top: 31%;
 	left: 20%;
@@ -319,7 +319,7 @@ body {
 	-webkit-box-reflect: right 8px;
 }
 
-.map .monster-2 {
+.map .monster-blue {
 	position: relative;
 	top: 73.5%;
 	left: 12%;
@@ -328,10 +328,10 @@ body {
 	border-radius: 50% 50% 0 0;
 	background: var(--monster-blue);
 	z-index: 1;
-	animation: monster-animation-2 10s 0.5s linear 1;
+	animation: monster-animation-blue 10s 0.5s linear 1;
 }
 
-.monster-2::before {
+.monster-blue::before {
 	content: '';
 	position: absolute;
 	bottom: -10px;
@@ -355,7 +355,7 @@ body {
 	background-size: 10px 20px;
 	transform: rotate(180deg);
 }
-.monster-eyes-2 {
+.monster-eyes-blue {
 	position: absolute;
 	top: 25%;
 	left: 20%;
@@ -371,49 +371,217 @@ body {
 	0% {
 		transform: rotate(-45deg);
 	}
-	20% {
+	2.5% {
 		transform: translateX(523%) rotate(-45deg);
 	}
-	21% {
+	3% {
 		transform: translateX(523%) rotate(45deg);
 	}
-	40% {
+	5% {
 		transform: translateX(523%) translateY(400%) rotate(45deg);
 	}
-	41% {
+	5.5% {
 		transform: translateX(523%) translateY(400%) rotate(-45deg);
 	}
-	80% {
+	7.5% {
 		transform: translateX(1458%) translateY(400%) rotate(-45deg);
 	}
-	81% {
+	8% {
 		transform: translateX(1458%) translateY(400%) rotate(45deg);
 	}
-	100% {
-		transform: translateX(1458%) translateY(960%) rotate(45deg);
+	10% {
+		transform: translateX(1458%) translateY(940%) rotate(45deg);
 	}
-}
-@keyframes monster-animation-1 {
+	10.5% {
+		transform: translateX(1458%) translateY(940%) rotate(135deg);
+	}
+	12.5% {
+		transform: translateX(520%) translateY(940%) rotate(135deg);
+	}
+	13% {
+		transform: translateX(520%) translateY(940%) rotate(225deg);
+	}
+	15% {
+		transform: translateX(520%) translateY(670%) rotate(225deg);
+	}
+	15.5% {
+		transform: translateX(520%) translateY(670%) rotate(135deg);
+	}
+	17.5% {
+		transform: translateX(-10%) translateY(670%) rotate(135deg);
+	}
+	18% {
+		transform: translateX(-10%) translateY(670%) rotate(225deg);
+	}
 	20% {
-		transform: translateX(-735%) translateY(-40%);
+		transform: translateX(-10%) translateY(530%) rotate(225deg);
+	}
+	20.5% {
+		transform: translateX(-10%) translateY(530%) rotate(45deg);
+	}
+	22.5% {
+		transform: translateX(-10%) translateY(940%) rotate(45deg);
+	}
+	23% {
+		transform: translateX(-10%) translateY(940%) rotate(-45deg);
+	}
+	25% {
+		transform: translateX(925%) translateY(940%) rotate(-45deg);
+	}
+	25.5% {
+		transform: translateX(925%) translateY(940%) rotate(-135deg);
+	}
+	27.5% {
+		transform: translateX(925%) translateY(660%) rotate(-135deg);
+	}
+	28% {
+		transform: translateX(925%) translateY(660%) rotate(-45deg);
 	}
 	30% {
-		transform: translateX(-735%) translateY(265%);
+		transform: translateX(1460%) translateY(660%) rotate(-45deg);
+	}
+	30.5% {
+		transform: translateX(1460%) translateY(660%) rotate(-135deg);
+	}
+	32.5% {
+		transform: translateX(1460%) translateY(0%) rotate(-135deg);
+	}
+	33% {
+		transform: translateX(1460%) translateY(0%) rotate(-225deg);
+	}
+	35% {
+		transform: translateX(925%) translateY(0%) rotate(-225deg);
+	}
+	35.5% {
+		transform: translateX(925%) translateY(0%) rotate(-315deg);
+	}
+	37.5% {
+		transform: translateX(925%) translateY(400%) rotate(-315deg);
+	}
+	38% {
+		transform: translateX(925%) translateY(400%) rotate(-225deg);
+	}
+	40% {
+		transform: translateX(-10%) translateY(400%) rotate(-225deg);
+	}
+	40.5% {
+		transform: translateX(-10%) translateY(400%) rotate(-135deg);
+	}
+	42.5% {
+		transform: translateX(-10%) translateY(-260%) rotate(-135deg);
+	}
+	43% {
+		transform: translateX(-10%) translateY(-260%) rotate(-45deg);
+	}
+	45% {
+		transform: translateX(525%) translateY(-260%) rotate(-45deg);
+	}
+	45.5% {
+		transform: translateX(525%) translateY(-260%) rotate(-135deg);
+	}
+	47.5% {
+		transform: translateX(525%) translateY(-530%) rotate(-135deg);
+	}
+	48% {
+		transform: translateX(525%) translateY(-530%) rotate(-45deg);
 	}
 	50% {
-		transform: translateX(-1265%) translateY(265%);
+		transform: translateX(1455%) translateY(-530%) rotate(-45deg);
+	}
+	50.5% {
+		transform: translateX(1455%) translateY(-530%) rotate(45deg);
+	}
+	52.5% {
+		transform: translateX(1455%) translateY(-140%) rotate(45deg);
+	}
+	53% {
+		transform: translateX(1455%) translateY(-140%) rotate(225deg);
+	}
+	55% {
+		transform: translateX(1455%) translateY(-270%) rotate(225deg);
+	}
+	55.5% {
+		transform: translateX(1455%) translateY(-270%) rotate(135deg);
+	}
+	57.5% {
+		transform: translateX(925%) translateY(-270%) rotate(135deg);
+	}
+	58% {
+		transform: translateX(925%) translateY(-270%) rotate(225deg);
+	}
+	60% {
+		transform: translateX(925%) translateY(-530%) rotate(225deg);
+	}
+	60.5% {
+		transform: translateX(925%) translateY(-530%) rotate(135deg);
+	}
+	62.5% {
+		transform: translateX(-10%) translateY(-530%) rotate(135deg);
+	}
+	63% {
+		transform: translateX(-10%) translateY(-530%) rotate(45deg);
+	}
+	65% {
+		transform: translateX(-10%) translateY(0%) rotate(45deg);
+	}
+	65.5% {
+		transform: translateX(-10%) translateY(0%) rotate(-45deg);
+	}
+	67.5% {
+		transform: translateX(260%) translateY(0%) rotate(-45deg);
+	}
+	68% {
+		transform: translateX(260%) translateY(0%) rotate(45deg);
 	}
 	70% {
-		transform: translateX(-1265%) translateY(1455%);
+		transform: translateX(260%) translateY(130%) rotate(45deg);
 	}
-	90% {
-		transform: translateX(-725%) translateY(1455%);
+	70.5% {
+		transform: translateX(260%) translateY(130%) rotate(-135deg);
+	}
+	72.5% {
+		transform: translateX(260%) translateY(0%) rotate(-135deg);
+	}
+	73% {
+		transform: translateX(260%) translateY(0%) rotate(-45deg);
+	}
+	75% {
+		transform: translateX(1190%) translateY(0%) rotate(-45deg);
+	}
+	75.5% {
+		transform: translateX(1190%) translateY(0%) rotate(45deg);
 	}
 	100% {
-		transform: translateX(-735%) translateY(1800%);
+		transform: translateX(1190%) translateY(130%) rotate(45deg);
 	}
 }
-@keyframes monster-animation-2 {
+@keyframes monster-animation-red {
+	10% {
+		transform: translateX(-735%) translateY(-40%);
+	}
+	20% {
+		transform: translateX(-735%) translateY(265%);
+	}
+	45% {
+		transform: translateX(-1265%) translateY(265%);
+	}
+	60% {
+		transform: translateX(-1265%) translateY(1455%);
+	}
+	70% {
+		transform: translateX(-735%) translateY(1455%);
+	}
+	80% {
+		transform: translateX(-735%) translateY(1790%);
+	}
+	90% {
+		transform: translateX(200%) translateY(1790%);
+	}
+	100% {
+		transform: translateX(200%) translateY(1790%);
+	}
+}
+@keyframes monster-animation-blue {
 	10% {
 		transform: translateX(375%) translateY(-40%);
 	}
@@ -437,138 +605,6 @@ body {
 	0% {
 		border-left: 30px solid var(--yellow);
 		border-top: 30px solid var(--yellow);
-	}
-	3% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	6% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	9% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	12% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	15% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	18% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	21% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	24% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	27% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	30% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	33% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	36% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	39% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	42% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	45% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	48% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	51% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	54% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	57% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	60% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	63% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	66% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	69% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	72% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	75% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	78% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	81% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	84% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	87% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	90% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	93% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
-	}
-	96% {
-		border-left: 30px solid var(--yellow);
-		border-top: 30px solid var(--yellow);
-	}
-	99% {
-		border-left: 15px solid var(--yellow);
-		border-top: 15px solid var(--yellow);
 	}
 	100% {
 		border-left: 15px solid var(--yellow);
@@ -598,44 +634,58 @@ body {
 	grid-area: 1 / 12 / 2 / 13;
 	width: 15px;
 	height: 15px;
+	animation: eat-bounty 0.3s forwards 45s;
 }
-.div2 {
+.bounties .div2 {
 	grid-area: 1 / 11 / 2 / 12;
+	animation: eat-bounty 0.3s forwards 44.5s;
 }
-.div3 {
+.bounties .div3 {
 	grid-area: 1 / 10 / 2 / 11;
+	animation: eat-bounty 0.3s forwards 44s;
 }
 .div4 {
 	grid-area: 1 / 9 / 2 / 10;
+	animation: eat-bounty 0.3s forwards 43.5s;
 }
 .div5 {
 	grid-area: 1 / 8 / 2 / 9;
+	animation: eat-bounty 0.3s forwards 43s;
 }
 .div6 {
 	grid-area: 1 / 7 / 2 / 8;
+	animation: eat-bounty 0.3s forwards 42.5s;
 }
 .div7 {
 	grid-area: 1 / 6 / 2 / 7;
+	animation: eat-bounty 0.3s forwards 42s;
 }
 .div8 {
 	grid-area: 1 / 5 / 2 / 6;
+	animation: eat-bounty 0.3s forwards 41.5s;
 }
 .div9 {
 	grid-area: 1 / 4 / 2 / 5;
+	animation: eat-bounty 0.3s forwards 52s;
 }
+
 .div10 {
 	grid-area: 1 / 3 / 2 / 4;
+	animation: eat-bounty 0.3s forwards 52.5s;
 }
 .div11 {
 	grid-area: 1 / 2 / 2 / 3;
+	animation: eat-bounty 0.3s forwards 53s;
 }
 .bounties .div12 {
 	grid-area: 1 / 1 / 2 / 2;
 	width: 15px;
 	height: 15px;
+	animation: eat-bounty 0.3s forwards 53.5s;
 }
 .div13 {
 	grid-area: 2 / 1 / 3 / 2;
+	animation: eat-bounty 0.3s forwards 54s;
 }
 .div14 {
 	grid-area: 2 / 2 / 3 / 3;
@@ -648,6 +698,7 @@ body {
 }
 .div17 {
 	grid-area: 2 / 5 / 3 / 6;
+	animation: eat-bounty 0.3s forwards 41s;
 }
 .div18 {
 	grid-area: 2 / 6 / 3 / 7;
@@ -657,6 +708,7 @@ body {
 }
 .div20 {
 	grid-area: 2 / 8 / 3 / 9;
+	animation: eat-bounty 0.3s forwards 49.5s;
 }
 .div21 {
 	grid-area: 2 / 9 / 3 / 10;
@@ -669,21 +721,27 @@ body {
 }
 .div24 {
 	grid-area: 2 / 12 / 3 / 13;
+	animation: eat-bounty 0.3s forwards 45.5s;
 }
 .div25 {
 	grid-area: 3 / 12 / 4 / 13;
+	animation: eat-bounty 0.3s forwards 46s;
 }
 .div26 {
 	grid-area: 3 / 11 / 4 / 12;
+	animation: eat-bounty 0.3s forwards 47.5s;
 }
 .div27 {
 	grid-area: 3 / 10 / 4 / 11;
+	animation: eat-bounty 0.3s forwards 48s;
 }
 .div28 {
 	grid-area: 3 / 9 / 4 / 10;
+	animation: eat-bounty 0.3s forwards 48.5s;
 }
 .div29 {
 	grid-area: 3 / 8 / 4 / 9;
+	animation: eat-bounty 0.3s forwards 49s;
 }
 .div30 {
 	grid-area: 3 / 7 / 4 / 8;
@@ -693,21 +751,27 @@ body {
 }
 .div32 {
 	grid-area: 3 / 5 / 4 / 6;
+	animation: eat-bounty 0.3s forwards 40.5s;
 }
 .div33 {
 	grid-area: 3 / 4 / 4 / 5;
+	animation: eat-bounty 0.3s forwards 40s;
 }
 .div34 {
 	grid-area: 3 / 3 / 4 / 4;
+	animation: eat-bounty 0.3s forwards 39.5s;
 }
 .div35 {
 	grid-area: 3 / 2 / 4 / 3;
+	animation: eat-bounty 0.3s forwards 39s;
 }
 .div36 {
 	grid-area: 3 / 1 / 4 / 2;
+	animation: eat-bounty 0.3s forwards 38.5s;
 }
 .div37 {
 	grid-area: 4 / 1 / 5 / 2;
+	animation: eat-bounty 0.3s forwards 38s;
 }
 .div38 {
 	grid-area: 4 / 2 / 5 / 3;
@@ -741,27 +805,35 @@ body {
 }
 .div48 {
 	grid-area: 4 / 12 / 5 / 13;
+	animation: eat-bounty 0.3s forwards 46.5s;
 }
 .div49 {
 	grid-area: 5 / 12 / 6 / 13;
+	animation: eat-bounty 0.3s forwards 30.5s;
 }
 .div50 {
 	grid-area: 5 / 11 / 6 / 12;
+	animation: eat-bounty 0.3s forwards 31s;
 }
 .div51 {
 	grid-area: 5 / 10 / 6 / 11;
+	animation: eat-bounty 0.3s forwards 31.5s;
 }
 .div52 {
 	grid-area: 5 / 9 / 6 / 10;
+	animation: eat-bounty 0.3s forwards 32s;
 }
 .div53 {
 	grid-area: 5 / 8 / 6 / 9;
+	animation: eat-bounty 0.3s forwards 32.5s;
 }
 .div54 {
 	grid-area: 5 / 7 / 6 / 8;
+	animation: eat-bounty 0.3s forwards 56.5s;
 }
 .div55 {
 	grid-area: 5 / 6 / 6 / 7;
+	animation: eat-bounty 0.3s forwards 56s;
 }
 .div56 {
 	grid-area: 5 / 5 / 6 / 6;
@@ -785,19 +857,21 @@ body {
 }
 .div61 {
 	grid-area: 6 / 1 / 7 / 2;
+	animation: eat-bounty 0.3s forwards 37.5s;
 }
 .div62 {
 	grid-area: 6 / 2 / 7 / 3;
 }
 .div63 {
 	grid-area: 6 / 3 / 7 / 4;
+	animation: eat-bounty 0.3s forwards 55s;
 }
 .div64 {
 	grid-area: 6 / 4 / 7 / 5;
 }
 .div65 {
 	grid-area: 6 / 5 / 7 / 6;
-	animation: eat-bounty 0.3s forwards 6s;
+	animation: eat-bounty 0.3s forwards 4.5s;
 }
 .div66 {
 	grid-area: 6 / 6 / 7 / 7;
@@ -807,21 +881,25 @@ body {
 }
 .div68 {
 	grid-area: 6 / 8 / 7 / 9;
+	animation: eat-bounty 0.3s forwards 33s;
 }
 .div69 {
 	grid-area: 6 / 9 / 7 / 10;
 }
 .div70 {
 	grid-area: 6 / 10 / 7 / 11;
+	animation: eat-bounty 0.3s forwards 58s;
 }
 .div71 {
 	grid-area: 6 / 11 / 7 / 12;
 }
 .div72 {
 	grid-area: 6 / 12 / 7 / 13;
+	animation: eat-bounty 0.3s forwards 26.5s;
 }
 .div73 {
 	grid-area: 7 / 12 / 8 / 13;
+	animation: eat-bounty 0.3s forwards 26s;
 }
 .div74 {
 	grid-area: 7 / 11 / 8 / 12;
@@ -834,6 +912,7 @@ body {
 }
 .div77 {
 	grid-area: 7 / 8 / 8 / 9;
+	animation: eat-bounty 0.3s forwards 33.5s;
 }
 .div78 {
 	grid-area: 7 / 7 / 8 / 8;
@@ -843,7 +922,7 @@ body {
 }
 .div80 {
 	grid-area: 7 / 5 / 8 / 6;
-	animation: eat-bounty 0.3s forwards 7.5s;
+	animation: eat-bounty 0.3s forwards 5s;
 }
 .div81 {
 	grid-area: 7 / 4 / 8 / 5;
@@ -856,54 +935,59 @@ body {
 }
 .div84 {
 	grid-area: 7 / 1 / 8 / 2;
+	animation: eat-bounty 0.3s forwards 37s;
 }
 .div85 {
 	grid-area: 8 / 1 / 9 / 2;
+	animation: eat-bounty 0.3s forwards 36.5s;
 }
 .div86 {
 	grid-area: 8 / 2 / 9 / 3;
+	animation: eat-bounty 0.3s forwards 36s;
 }
 .div87 {
 	grid-area: 8 / 3 / 9 / 4;
+	animation: eat-bounty 0.3s forwards 35.5s;
 }
 .div88 {
 	grid-area: 8 / 4 / 9 / 5;
+	animation: eat-bounty 0.3s forwards 35s;
 }
 .div89 {
 	grid-area: 8 / 5 / 9 / 6;
-	animation: eat-bounty 0.3s forwards 9s;
+	animation: eat-bounty 0.3s forwards 5.5s;
 }
 .div90 {
 	grid-area: 8 / 6 / 9 / 7;
-	animation: eat-bounty 0.3s forwards 10s;
+	animation: eat-bounty 0.3s forwards 6s;
 }
 .div91 {
 	grid-area: 8 / 7 / 9 / 8;
-	animation: eat-bounty 0.3s forwards 11s;
+	animation: eat-bounty 0.3s forwards 6.5s;
 }
 .div92 {
 	grid-area: 8 / 8 / 9 / 9;
-	animation: eat-bounty 0.3s forwards 12s;
+	animation: eat-bounty 0.3s forwards 7s;
 }
 .div93 {
 	grid-area: 8 / 9 / 9 / 10;
-	animation: eat-bounty 0.3s forwards 13s;
+	animation: eat-bounty 0.3s forwards 7.5s;
 }
 .div94 {
 	grid-area: 8 / 10 / 9 / 11;
-	animation: eat-bounty 0.3s forwards 14s;
+	animation: eat-bounty 0.3s forwards 8s;
 }
 .div95 {
 	grid-area: 8 / 11 / 9 / 12;
-	animation: eat-bounty 0.3s forwards 15s;
+	animation: eat-bounty 0.3s forwards 8.5s;
 }
 .div96 {
 	grid-area: 8 / 12 / 9 / 13;
-	animation: eat-bounty 0.3s forwards 16s;
+	animation: eat-bounty 0.3s forwards 9s;
 }
 .div97 {
 	grid-area: 9 / 12 / 10 / 13;
-	animation: eat-bounty 0.3s forwards 17s;
+	animation: eat-bounty 0.3s forwards 9.5s;
 }
 .div98 {
 	grid-area: 9 / 11 / 10 / 12;
@@ -934,24 +1018,31 @@ body {
 }
 .div107 {
 	grid-area: 9 / 2 / 10 / 3;
+	animation: eat-bounty 0.3s forwards 19s;
 }
 .div108 {
 	grid-area: 9 / 1 / 10 / 2;
+	animation: eat-bounty 0.3s forwards 18.5s;
 }
 .div109 {
 	grid-area: 10 / 1 / 11 / 2;
+	animation: eat-bounty 0.3s forwards 18s;
 }
 .div110 {
 	grid-area: 10 / 2 / 11 / 3;
+	animation: eat-bounty 0.3s forwards 17.5s;
 }
 .div111 {
 	grid-area: 10 / 3 / 11 / 4;
+	animation: eat-bounty 0.3s forwards 17s;
 }
 .div112 {
 	grid-area: 10 / 4 / 11 / 5;
+	animation: eat-bounty 0.3s forwards 16.5s;
 }
 .div113 {
 	grid-area: 10 / 5 / 11 / 6;
+	animation: eat-bounty 0.3s forwards 15.5s;
 }
 .div114 {
 	grid-area: 10 / 6 / 11 / 7;
@@ -961,23 +1052,27 @@ body {
 }
 .div116 {
 	grid-area: 10 / 8 / 11 / 9;
+	animation: eat-bounty 0.3s forwards 23.5s;
 }
 .div117 {
 	grid-area: 10 / 9 / 11 / 10;
+	animation: eat-bounty 0.3s forwards 24s;
 }
 .div118 {
 	grid-area: 10 / 10 / 11 / 11;
+	animation: eat-bounty 0.3s forwards 25s;
 }
 .div119 {
 	grid-area: 10 / 11 / 11 / 12;
+	animation: eat-bounty 0.3s forwards 25.5s;
 }
 .div120 {
 	grid-area: 10 / 12 / 11 / 13;
-	animation: eat-bounty 0.3s forwards 18s;
+	animation: eat-bounty 0.3s forwards 10s;
 }
 .div121 {
 	grid-area: 11 / 12 / 12 / 13;
-	animation: eat-bounty 0.3s forwards 18s;
+	animation: eat-bounty 0.3s forwards 10.5s;
 }
 .div122 {
 	grid-area: 11 / 11 / 12 / 12;
@@ -990,6 +1085,7 @@ body {
 }
 .div125 {
 	grid-area: 11 / 8 / 12 / 9;
+	animation: eat-bounty 0.3s forwards 23s;
 }
 .div126 {
 	grid-area: 11 / 7 / 12 / 8;
@@ -999,6 +1095,7 @@ body {
 }
 .div128 {
 	grid-area: 11 / 5 / 12 / 6;
+	animation: eat-bounty 0.3s forwards 15.5s;
 }
 .div129 {
 	grid-area: 11 / 4 / 12 / 5;
@@ -1011,45 +1108,57 @@ body {
 }
 .div132 {
 	grid-area: 11 / 1 / 12 / 2;
+	animation: eat-bounty 0.3s forwards 19.5s;
 }
 .bounties .div133 {
 	grid-area: 12 / 1 / 13 / 2;
 	width: 15px;
 	height: 15px;
+	animation: eat-bounty 0.3s forwards 20s;
 }
 .div134 {
 	grid-area: 12 / 2 / 13 / 3;
+	animation: eat-bounty 0.3s forwards 20.5s;
 }
 .div135 {
 	grid-area: 12 / 3 / 13 / 4;
+	animation: eat-bounty 0.3s forwards 21s;
 }
 .div136 {
 	grid-area: 12 / 4 / 13 / 5;
+	animation: eat-bounty 0.3s forwards 21.5s;
 }
 .div137 {
 	grid-area: 12 / 5 / 13 / 6;
+	animation: eat-bounty 0.3s forwards 15s;
 }
 .div138 {
 	grid-area: 12 / 6 / 13 / 7;
+	animation: eat-bounty 0.3s forwards 14.5s;
 }
 .div139 {
 	grid-area: 12 / 7 / 13 / 8;
+	animation: eat-bounty 0.3s forwards 14s;
 }
 .div140 {
 	grid-area: 12 / 8 / 13 / 9;
+	animation: eat-bounty 0.3s forwards 13.5s;
 }
 .div141 {
 	grid-area: 12 / 9 / 13 / 10;
+	animation: eat-bounty 0.3s forwards 13s;
 }
 .div142 {
 	grid-area: 12 / 10 / 13 / 11;
+	animation: eat-bounty 0.3s forwards 12.5s;
 }
 .div143 {
 	grid-area: 12 / 11 / 13 / 12;
+	animation: eat-bounty 0.3s forwards 12s;
 }
 .bounties .div144 {
 	grid-area: 12 / 12 / 13 / 13;
-	animation: eat-bounty 0.3s forwards 17s;
+	animation: eat-bounty 0.3s forwards 11.5s;
 	width: 15px;
 	height: 15px;
 }
