@@ -281,7 +281,7 @@ body {
 	border-radius: 50% 50% 0 0;
 	background: var(--monster-red);
 	z-index: 1;
-	animation: monster-animation-red 10s 0.5s linear 1;
+	animation: monster-animation-red 40s 0.5s linear 1;
 }
 .monster-red::before {
 	content: '';
@@ -357,7 +357,7 @@ body {
 }
 .monster-eyes-blue {
 	position: absolute;
-	top: 25%;
+	top: 28%;
 	left: 20%;
 	border-radius: 50%;
 	background-color: var(--black);
@@ -479,79 +479,79 @@ body {
 	56% {
 		transform: translateX(525%) translateY(-260%) rotate(-135deg);
 	}
-	58% {
+	57.5% {
 		transform: translateX(525%) translateY(-530%) rotate(-135deg);
 	}
-	58.5% {
+	58% {
 		transform: translateX(525%) translateY(-530%) rotate(-45deg);
 	}
-	62.5% {
+	62% {
 		transform: translateX(1455%) translateY(-530%) rotate(-45deg);
 	}
-	63% {
+	62.5% {
 		transform: translateX(1455%) translateY(-530%) rotate(45deg);
 	}
-	65% {
+	64.5% {
 		transform: translateX(1455%) translateY(-140%) rotate(45deg);
 	}
-	65.5% {
+	65% {
 		transform: translateX(1455%) translateY(-140%) rotate(225deg);
 	}
-	66.5% {
+	66% {
 		transform: translateX(1455%) translateY(-270%) rotate(225deg);
 	}
 	66.5% {
 		transform: translateX(1455%) translateY(-270%) rotate(135deg);
 	}
-	69.5% {
+	69% {
 		transform: translateX(925%) translateY(-270%) rotate(135deg);
 	}
-	70% {
+	69.5% {
 		transform: translateX(925%) translateY(-270%) rotate(225deg);
 	}
-	71.5% {
+	71% {
 		transform: translateX(925%) translateY(-530%) rotate(225deg);
 	}
-	72% {
+	71.5% {
 		transform: translateX(925%) translateY(-530%) rotate(135deg);
 	}
-	76% {
+	75.5% {
 		transform: translateX(-10%) translateY(-530%) rotate(135deg);
 	}
-	76.5% {
+	76% {
 		transform: translateX(-10%) translateY(-530%) rotate(45deg);
 	}
-	79.5% {
+	79% {
 		transform: translateX(-10%) translateY(0%) rotate(45deg);
 	}
-	80% {
+	79.5% {
 		transform: translateX(-10%) translateY(0%) rotate(-45deg);
 	}
-	81.5% {
+	81% {
 		transform: translateX(260%) translateY(0%) rotate(-45deg);
 	}
-	82% {
+	81.5% {
 		transform: translateX(260%) translateY(0%) rotate(45deg);
 	}
-	83% {
+	82.5% {
 		transform: translateX(260%) translateY(130%) rotate(45deg);
 	}
-	84% {
+	83.5% {
 		transform: translateX(260%) translateY(130%) rotate(-135deg);
 	}
-	85% {
+	84.5% {
 		transform: translateX(260%) translateY(0%) rotate(-135deg);
 	}
-	85.5% {
+	85% {
 		transform: translateX(260%) translateY(0%) rotate(-45deg);
 	}
-	89.5% {
+	89% {
 		transform: translateX(1190%) translateY(0%) rotate(-45deg);
 	}
-	90% {
+	89.5% {
 		transform: translateX(1190%) translateY(0%) rotate(45deg);
 	}
-	91% {
+	90.5% {
 		transform: translateX(1190%) translateY(130%) rotate(45deg);
 	}
 	100% {
@@ -637,58 +637,58 @@ body {
 	grid-area: 1 / 12 / 2 / 13;
 	width: 15px;
 	height: 15px;
-	animation: eat-bounty 0.2s forwards 45s;
+	animation: eat-bounty 0.2s forwards 37.65s;
 }
 .bounties .div2 {
 	grid-area: 1 / 11 / 2 / 12;
-	animation: eat-bounty 0.2s forwards 44.5s;
+	animation: eat-bounty 0.2s forwards 37.3s;
 }
 .bounties .div3 {
 	grid-area: 1 / 10 / 2 / 11;
-	animation: eat-bounty 0.2s forwards 44s;
+	animation: eat-bounty 0.2s forwards 37s;
 }
 .div4 {
 	grid-area: 1 / 9 / 2 / 10;
-	animation: eat-bounty 0.2s forwards 43.5s;
+	animation: eat-bounty 0.2s forwards 36.6s;
 }
 .div5 {
 	grid-area: 1 / 8 / 2 / 9;
-	animation: eat-bounty 0.2s forwards 43s;
+	animation: eat-bounty 0.2s forwards 36.35s;
 }
 .div6 {
 	grid-area: 1 / 7 / 2 / 8;
-	animation: eat-bounty 0.2s forwards 42.5s;
+	animation: eat-bounty 0.2s forwards 36s;
 }
 .div7 {
 	grid-area: 1 / 6 / 2 / 7;
-	animation: eat-bounty 0.2s forwards 42s;
+	animation: eat-bounty 0.2s forwards 35.6s;
 }
 .div8 {
 	grid-area: 1 / 5 / 2 / 6;
-	animation: eat-bounty 0.2s forwards 41.5s;
+	animation: eat-bounty 0.2s forwards 35s;
 }
 .div9 {
 	grid-area: 1 / 4 / 2 / 5;
-	animation: eat-bounty 0.2s forwards 52s;
+	animation: eat-bounty 0.2s forwards 44.8s;
 }
 
 .div10 {
 	grid-area: 1 / 3 / 2 / 4;
-	animation: eat-bounty 0.2s forwards 52.5s;
+	animation: eat-bounty 0.2s forwards 45s;
 }
 .div11 {
 	grid-area: 1 / 2 / 2 / 3;
-	animation: eat-bounty 0.2s forwards 53s;
+	animation: eat-bounty 0.2s forwards 45.45s;
 }
 .bounties .div12 {
 	grid-area: 1 / 1 / 2 / 2;
 	width: 15px;
 	height: 15px;
-	animation: eat-bounty 0.2s forwards 53.5s;
+	animation: eat-bounty 0.2s forwards 45.8s;
 }
 .div13 {
 	grid-area: 2 / 1 / 3 / 2;
-	animation: eat-bounty 0.2s forwards 54s;
+	animation: eat-bounty 0.2s forwards 46.4s;
 }
 .div14 {
 	grid-area: 2 / 2 / 3 / 3;
@@ -701,7 +701,7 @@ body {
 }
 .div17 {
 	grid-area: 2 / 5 / 3 / 6;
-	animation: eat-bounty 0.2s forwards 41s;
+	animation: eat-bounty 0.2s forwards 34.5s;
 }
 .div18 {
 	grid-area: 2 / 6 / 3 / 7;
@@ -711,7 +711,7 @@ body {
 }
 .div20 {
 	grid-area: 2 / 8 / 3 / 9;
-	animation: eat-bounty 0.2s forwards 49.5s;
+	animation: eat-bounty 0.2s forwards 42.5s;
 }
 .div21 {
 	grid-area: 2 / 9 / 3 / 10;
@@ -724,27 +724,27 @@ body {
 }
 .div24 {
 	grid-area: 2 / 12 / 3 / 13;
-	animation: eat-bounty 0.2s forwards 45.5s;
+	animation: eat-bounty 0.2s forwards 38.4s;
 }
 .div25 {
 	grid-area: 3 / 12 / 4 / 13;
-	animation: eat-bounty 0.2s forwards 46s;
+	animation: eat-bounty 0.2s forwards 38.8s;
 }
 .div26 {
 	grid-area: 3 / 11 / 4 / 12;
-	animation: eat-bounty 0.2s forwards 47.5s;
+	animation: eat-bounty 0.2s forwards 40.7s;
 }
 .div27 {
 	grid-area: 3 / 10 / 4 / 11;
-	animation: eat-bounty 0.2s forwards 48s;
+	animation: eat-bounty 0.2s forwards 41.1s;
 }
 .div28 {
 	grid-area: 3 / 9 / 4 / 10;
-	animation: eat-bounty 0.2s forwards 48.5s;
+	animation: eat-bounty 0.2s forwards 41.4s;
 }
 .div29 {
 	grid-area: 3 / 8 / 4 / 9;
-	animation: eat-bounty 0.2s forwards 49s;
+	animation: eat-bounty 0.2s forwards 41.8s;
 }
 .div30 {
 	grid-area: 3 / 7 / 4 / 8;
@@ -754,27 +754,27 @@ body {
 }
 .div32 {
 	grid-area: 3 / 5 / 4 / 6;
-	animation: eat-bounty 0.2s forwards 40.5s;
+	animation: eat-bounty 0.2s forwards 33.7s;
 }
 .div33 {
 	grid-area: 3 / 4 / 4 / 5;
-	animation: eat-bounty 0.2s forwards 40s;
+	animation: eat-bounty 0.2s forwards 33.3s;
 }
 .div34 {
 	grid-area: 3 / 3 / 4 / 4;
-	animation: eat-bounty 0.2s forwards 39.5s;
+	animation: eat-bounty 0.2s forwards 32.95s;
 }
 .div35 {
 	grid-area: 3 / 2 / 4 / 3;
-	animation: eat-bounty 0.2s forwards 39s;
+	animation: eat-bounty 0.2s forwards 32.6s;
 }
 .div36 {
 	grid-area: 3 / 1 / 4 / 2;
-	animation: eat-bounty 0.2s forwards 38.5s;
+	animation: eat-bounty 0.2s forwards 31.9s;
 }
 .div37 {
 	grid-area: 4 / 1 / 5 / 2;
-	animation: eat-bounty 0.3s forwards 38s;
+	animation: eat-bounty 0.3s forwards 31.5s;
 }
 .div38 {
 	grid-area: 4 / 2 / 5 / 3;
@@ -808,7 +808,7 @@ body {
 }
 .div48 {
 	grid-area: 4 / 12 / 5 / 13;
-	animation: eat-bounty 0.2s forwards 46.5s;
+	animation: eat-bounty 0.2s forwards 39.1s;
 }
 .div49 {
 	grid-area: 5 / 12 / 6 / 13;
@@ -832,11 +832,12 @@ body {
 }
 .div54 {
 	grid-area: 5 / 7 / 6 / 8;
-	animation: eat-bounty 0.2s forwards 55s;
+	animation: eat-bounty 0.2s forwards 52.8s;
+	/* last one */
 }
 .div55 {
 	grid-area: 5 / 6 / 6 / 7;
-	animation: eat-bounty 0.2s forwards 56s;
+	animation: eat-bounty 0.2s forwards 52.5s;
 }
 .div56 {
 	grid-area: 5 / 5 / 6 / 6;
@@ -848,7 +849,7 @@ body {
 }
 .div58 {
 	grid-area: 5 / 3 / 6 / 4;
-	animation: eat-bounty 0.2s forwards 1.1s;
+	animation: eat-bounty 0.2s forwards 1.15s;
 }
 .div59 {
 	grid-area: 5 / 2 / 6 / 3;
@@ -861,14 +862,13 @@ body {
 .div61 {
 	grid-area: 6 / 1 / 7 / 2;
 	animation: eat-bounty 0.2s forwards 30.8s;
-	/* koniec */
 }
 .div62 {
 	grid-area: 6 / 2 / 7 / 3;
 }
 .div63 {
 	grid-area: 6 / 3 / 7 / 4;
-	animation: eat-bounty 0.2s forwards 55s;
+	animation: eat-bounty 0.2s forwards 49.8s;
 }
 .div64 {
 	grid-area: 6 / 4 / 7 / 5;
@@ -892,7 +892,7 @@ body {
 }
 .div70 {
 	grid-area: 6 / 10 / 7 / 11;
-	animation: eat-bounty 0.2s forwards 58s;
+	animation: eat-bounty 0.2s forwards 54s;
 }
 .div71 {
 	grid-area: 6 / 11 / 7 / 12;
