@@ -7,6 +7,7 @@
 	--outline: 1px solid red;
 	--monster-blue: teal;
 	--white: aliceblue;
+	--navy: rgb(3, 3, 247);
 }
 * {
 	margin: 0;
@@ -269,6 +270,7 @@ body {
 	border-radius: 50%;
 	border-left: 15px solid var(--yellow);
 	border-top: 15px solid var(--yellow);
+	z-index: 2;
 	animation: pac-man-animation 60s 0.5s linear 1 forwards,
 		pac-man-mouth 0.3s 0.5s linear infinite alternate-reverse;
 }
@@ -279,12 +281,11 @@ body {
 	width: 30px;
 	height: 24px;
 	border-radius: 50% 50% 0 0;
-	background: var(--monster-red);
+	background-color: var(--monster-red);
 	z-index: 1;
-	animation: monster-animation-red 40s 0.5s linear 1;
+	animation: monster-red-animation 60s 0.5s linear forwards 1;
 }
-.monster-red::before {
-	content: '';
+.monster-red-wave-normal {
 	position: absolute;
 	bottom: -10px;
 	left: 0%;
@@ -306,7 +307,60 @@ body {
 		);
 	background-size: 10px 20px;
 	transform: rotate(180deg);
+	animation: monster-red-wave-red-animation 60s 0.5s linear 1 forwards;
 }
+.monster-red-wave-eaten {
+	position: absolute;
+	bottom: -10px;
+	left: 0%;
+	width: 100%;
+	height: 10px;
+	background: linear-gradient(
+			-45deg,
+			transparent 33.333%,
+			var(--navy) 0.333%,
+			var(--navy) 66.667%,
+			transparent 66.667%
+		),
+		linear-gradient(
+			45deg,
+			transparent 33.333%,
+			var(--navy) 33.333%,
+			var(--navy) 66.667%,
+			transparent 66.667%
+		);
+	background-size: 10px 20px;
+	transform: rotate(180deg);
+	opacity: 0;
+	animation: monster-red-wave-eaten-animation 60s 0.5s linear 1 forwards;
+}
+.monster-red-wave-eaten-white-blinking {
+	position: absolute;
+	bottom: -10px;
+	left: 0%;
+	width: 100%;
+	height: 10px;
+	background: linear-gradient(
+			-45deg,
+			transparent 33.333%,
+			var(--white) 0.333%,
+			var(--white) 66.667%,
+			transparent 66.667%
+		),
+		linear-gradient(
+			45deg,
+			transparent 33.333%,
+			var(--white) 33.333%,
+			var(--white) 66.667%,
+			transparent 66.667%
+		);
+	background-size: 10px 20px;
+	transform: rotate(180deg);
+	opacity: 0;
+	animation: monster-red-wave-eaten-white-blinking-animation 60s 0.5s linear 1
+		forwards;
+}
+
 .monster-eyes-red {
 	position: absolute;
 	top: 31%;
@@ -317,8 +371,92 @@ body {
 	height: 5px;
 	box-shadow: 0 0 0 3.5px var(--white);
 	-webkit-box-reflect: right 8px;
+	animation: monster-eyes-red 60s 0.5s linear 1 forwards;
+}
+.monster-red-eyes-eaten {
+	position: absolute;
+	top: 25%;
+	left: 20.5%;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: var(--white);
+	-webkit-box-reflect: right 7px;
+	opacity: 0;
+	animation: monster-red-eyes-eaten-anim 60s 0.5s linear 1 forwards;
 }
 
+.monster-red-eyes-eaten-white-blinking {
+	position: absolute;
+	top: 25%;
+	left: 20.5%;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: var(--navy);
+	-webkit-box-reflect: right 7px;
+	opacity: 0;
+	animation: monster-red-eyes-eaten-white-blinking-anim 60s 0.5s linear 1
+		forwards;
+}
+
+.monster-red-mouth-eaten {
+	position: absolute;
+	bottom: -25%;
+	left: 6%;
+	width: 100%;
+	height: 20px;
+	background-color: var(--white);
+	clip-path: polygon(
+		0.25% 60.5%,
+		14.17% 37.76%,
+		28.1% 60.5%,
+		43.35% 37.76%,
+		58.6% 60.5%,
+		72.76% 37.24%,
+		86.92% 60.5%,
+		86.92% 75%,
+		72.76% 51.9%,
+		58.6% 75%,
+		43.35% 51.9%,
+		28.1% 75%,
+		14.17% 53.15%,
+		0.25% 75%
+	);
+	opacity: 0;
+	animation: monster-red-mouth-eaten-anim 60s 0.5s linear 1 forwards;
+}
+.monster-red-mouth-eaten-white-blinking {
+	position: absolute;
+	bottom: -25%;
+	left: 8%;
+	width: 100%;
+	height: 20px;
+	background-color: var(--navy);
+	clip-path: polygon(
+		0.25% 60.5%,
+		14.17% 37.76%,
+		28.1% 60.5%,
+		43.35% 37.76%,
+		58.6% 60.5%,
+		72.76% 37.24%,
+		86.92% 60.5%,
+		86.92% 75%,
+		72.76% 51.9%,
+		58.6% 75%,
+		43.35% 51.9%,
+		28.1% 75%,
+		14.17% 53.15%,
+		0.25% 75%
+	);
+	opacity: 0;
+	animation: monster-red-mouth-eaten-white-blinking-anim 60s 0.5s linear 1
+		forwards;
+}
+
+/****************************************************
+ ******************** MONSTER BLUE ******************
+ ****************************************************/
 .map .monster-blue {
 	position: relative;
 	top: 73.5%;
@@ -328,7 +466,7 @@ body {
 	border-radius: 50% 50% 0 0;
 	background: var(--monster-blue);
 	z-index: 1;
-	animation: monster-animation-blue 20s 0.5s linear 1;
+	animation: monster-blue-animation 20s 0.5s linear 1 forwards;
 }
 
 .monster-blue::before {
@@ -432,16 +570,16 @@ body {
 		transform: translateX(925%) translateY(940%) rotate(-135deg);
 	}
 	32.5% {
-		transform: translateX(925%) translateY(660%) rotate(-135deg);
+		transform: translateX(925%) translateY(670%) rotate(-135deg);
 	}
 	33% {
-		transform: translateX(925%) translateY(660%) rotate(-45deg);
+		transform: translateX(925%) translateY(670%) rotate(-45deg);
 	}
 	35.5% {
-		transform: translateX(1460%) translateY(660%) rotate(-45deg);
+		transform: translateX(1460%) translateY(670%) rotate(-45deg);
 	}
 	36% {
-		transform: translateX(1460%) translateY(660%) rotate(-135deg);
+		transform: translateX(1460%) translateY(670%) rotate(-135deg);
 	}
 	39% {
 		transform: translateX(1460%) translateY(0%) rotate(-135deg);
@@ -558,33 +696,528 @@ body {
 		transform: translateX(1190%) translateY(130%) rotate(45deg);
 	}
 }
-@keyframes monster-animation-red {
-	10% {
+@keyframes monster-red-animation {
+	3% {
 		transform: translateX(-735%) translateY(-40%);
 	}
-	20% {
+	4.5% {
 		transform: translateX(-735%) translateY(265%);
 	}
-	45% {
+	7% {
 		transform: translateX(-1265%) translateY(265%);
 	}
-	60% {
+	11% {
 		transform: translateX(-1265%) translateY(1455%);
 	}
-	70% {
+	12.5% {
+		background: var(--monster-red);
+	}
+	12.6% {
+		background: var(--navy);
+	}
+	13.5% {
 		transform: translateX(-735%) translateY(1455%);
 	}
-	80% {
+	15% {
 		transform: translateX(-735%) translateY(1790%);
 	}
+	16% {
+		transform: translateX(-550%) translateY(1790%);
+	}
+	16.1% {
+		opacity: 1;
+		background: var(--navy);
+	}
+	16.2% {
+		background-color: var(--black);
+	}
+	16.6% {
+		transform: translateX(-340%) translateY(1790%);
+	}
+	17.2% {
+		transform: translateX(-340%) translateY(1490%);
+	}
+	18.2% {
+		transform: translateX(180%) translateY(1490%);
+	}
+	19% {
+		transform: translateX(180%) translateY(1140%);
+	}
+	20% {
+		transform: translateX(-330%) translateY(1150%);
+	}
+	20.8% {
+		transform: translateX(-330%) translateY(600%);
+	}
+	21.2% {
+		transform: translateX(-535%) translateY(600%);
+	}
+	21.5% {
+		background-color: var(--black);
+	}
+	21.6% {
+		transform: translateX(-535%) translateY(870%);
+		background-color: var(--monster-red);
+	}
+	24% {
+		transform: translateX(-535%) translateY(870%);
+		background-color: var(--monster-red);
+	}
+	25% {
+		transform: translateX(-535%) translateY(610%);
+	}
+	28% {
+		transform: translateX(200%) translateY(610%);
+	}
+	30.5% {
+		transform: translateX(200%) translateY(-50%);
+	}
+	34.5% {
+		transform: translateX(-740%) translateY(-50%);
+	}
+	36% {
+		transform: translateX(-740%) translateY(270%);
+	}
+	38.5% {
+		transform: translateX(-1265%) translateY(270%);
+	}
+	43.5% {
+		transform: translateX(-1265%) translateY(1770%);
+	}
+	46% {
+		transform: translateX(-740%) translateY(1770%);
+	}
+	47.5% {
+		transform: translateX(-740%) translateY(1460%);
+	}
+	50% {
+		transform: translateX(-1265%) translateY(1460%);
+	}
+	51.5% {
+		transform: translateX(-1265%) translateY(1110%);
+	}
+	54% {
+		transform: translateX(-740%) translateY(1110%);
+	}
+	56% {
+		transform: translateX(-740%) translateY(630%);
+	}
+	58% {
+		transform: translateX(-340%) translateY(630%);
+	}
+	60% {
+		transform: translateX(-340%) translateY(1120%);
+	}
+	62.1% {
+		background: var(--monster-red);
+	}
+	62.2% {
+		background: var(--navy);
+	}
+	62.5% {
+		transform: translateX(190%) translateY(1120%);
+	}
+	68.5% {
+		transform: translateX(-1260%) translateY(1120%);
+	}
+	70.5% {
+		transform: translateX(-1260%) translateY(1775%);
+	}
+	74.5% {
+		transform: translateX(-330%) translateY(1775%);
+	}
+	76% {
+		transform: translateX(-330%) translateY(1460%);
+	}
+	78.5% {
+		transform: translateX(190%) translateY(1460%);
+	}
+	82.5% {
+		transform: translateX(190%) translateY(290%);
+	}
+	85% {
+		transform: translateX(-330%) translateY(290%);
+	}
+	85.1% {
+		background: var(--navy);
+	}
+	85.2% {
+		background: var(--white);
+	}
+	85.6% {
+		background: var(--navy);
+	}
+	86% {
+		background: var(--white);
+	}
+	86.4% {
+		background: var(--navy);
+	}
+	86.5% {
+		transform: translateX(-330%) translateY(-60%);
+	}
+	86.8% {
+		background: var(--white);
+	}
+	87.2% {
+		background: var(--navy);
+	}
+	87.6% {
+		background: var(--white);
+	}
+	88% {
+		background: var(--navy);
+	}
+	88.4% {
+		background: var(--white);
+	}
+	88.8% {
+		background: var(--navy);
+	}
+	89.2% {
+		background: var(--white);
+	}
+	89.6% {
+		background: var(--navy);
+	}
 	90% {
-		transform: translateX(200%) translateY(1790%);
+		background: var(--white);
+	}
+	90.4% {
+		background: var(--navy);
+	}
+	90.5% {
+		transform: translateX(-1260%) translateY(-60%);
+		background: var(--monster-red);
 	}
 	100% {
-		transform: translateX(200%) translateY(1790%);
+		transform: translateX(-1260%) translateY(-60%);
+		background: var(--monster-red);
 	}
 }
-@keyframes monster-animation-blue {
+
+@keyframes monster-red-wave-eaten-animation {
+	0% {
+		opacity: 0;
+	}
+	12.5% {
+		opacity: 0;
+	}
+	12.6% {
+		opacity: 1;
+	}
+	16.1% {
+		opacity: 1;
+	}
+	16.2% {
+		opacity: 0;
+	}
+	62.1% {
+		opacity: 0;
+	}
+	62.2% {
+		opacity: 1;
+	}
+	85.1% {
+		opacity: 1;
+	}
+	90.4% {
+		opacity: 1;
+	}
+	90.5% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes monster-red-wave-eaten-white-blinking-animation {
+	0% {
+		opacity: 0;
+	}
+	85.1% {
+		opacity: 0;
+	}
+	85.2% {
+		opacity: 1;
+	}
+	85.6% {
+		opacity: 0;
+	}
+	86% {
+		opacity: 1;
+	}
+	86.4% {
+		opacity: 0;
+	}
+	86.8% {
+		opacity: 1;
+	}
+	87.2% {
+		opacity: 0;
+	}
+	87.6% {
+		opacity: 1;
+	}
+	88% {
+		opacity: 0;
+	}
+	88.4% {
+		opacity: 1;
+	}
+	88.8% {
+		opacity: 0;
+	}
+	89.2% {
+		opacity: 1;
+	}
+	89.6% {
+		opacity: 0;
+	}
+	90% {
+		opacity: 1;
+	}
+	90.4% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes monster-red-wave-red-animation {
+	0% {
+		opacity: 1;
+	}
+	12.5% {
+		opacity: 1;
+	}
+	12.6% {
+		opacity: 0;
+	}
+	21.5% {
+		opacity: 0;
+	}
+	21.6% {
+		opacity: 1;
+	}
+	62.1% {
+		opacity: 1;
+	}
+	62.2% {
+		opacity: 0;
+	}
+	90.5% {
+		opacity: 0;
+	}
+	90.6% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes monster-eyes-red {
+	0% {
+		opacity: 1;
+	}
+	12.5% {
+		opacity: 1;
+	}
+	12.6% {
+		opacity: 0;
+	}
+	16.1% {
+		opacity: 0;
+	}
+	16.2% {
+		opacity: 1;
+	}
+	62.1% {
+		opacity: 1;
+	}
+	62.2% {
+		opacity: 0;
+	}
+	90.5% {
+		opacity: 0;
+	}
+	90.6% {
+		opacity: 1;
+	}
+}
+@keyframes monster-red-eyes-eaten-anim {
+	0% {
+		opacity: 0;
+	}
+	12.5% {
+		opacity: 0;
+	}
+	12.6% {
+		opacity: 1;
+	}
+	16.1% {
+		opacity: 1;
+	}
+	16.2% {
+		opacity: 0;
+	}
+	62.1% {
+		opacity: 0;
+	}
+	62.2% {
+		opacity: 1;
+	}
+	85.1% {
+		opacity: 1;
+	}
+	90.5% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes monster-red-eyes-eaten-white-blinking-anim {
+	0% {
+		opacity: 0;
+	}
+	85.1% {
+		opacity: 0;
+	}
+	85.2% {
+		opacity: 1;
+	}
+	85.6% {
+		opacity: 0;
+	}
+	86% {
+		opacity: 1;
+	}
+	86.4% {
+		opacity: 0;
+	}
+	86.8% {
+		opacity: 1;
+	}
+	87.2% {
+		opacity: 0;
+	}
+	87.6% {
+		opacity: 1;
+	}
+	88% {
+		opacity: 0;
+	}
+	88.4% {
+		opacity: 1;
+	}
+	88.8% {
+		opacity: 0;
+	}
+	89.2% {
+		opacity: 1;
+	}
+	89.6% {
+		opacity: 0;
+	}
+	90% {
+		opacity: 1;
+	}
+	90.4% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes monster-red-mouth-eaten-anim {
+	0% {
+		opacity: 0;
+	}
+	12.5% {
+		opacity: 0;
+	}
+	12.6% {
+		opacity: 1;
+	}
+	16.1% {
+		opacity: 1;
+	}
+	16.2% {
+		opacity: 0;
+	}
+	62.1% {
+		opacity: 0;
+	}
+	62.2% {
+		opacity: 1;
+	}
+	85.1% {
+		opacity: 1;
+	}
+	90.5% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes monster-red-mouth-eaten-white-blinking-anim {
+	0% {
+		opacity: 0;
+	}
+	85.1% {
+		opacity: 0;
+	}
+	85.2% {
+		opacity: 1;
+	}
+	85.6% {
+		opacity: 0;
+	}
+	86% {
+		opacity: 1;
+	}
+	86.4% {
+		opacity: 0;
+	}
+	86.8% {
+		opacity: 1;
+	}
+	87.2% {
+		opacity: 0;
+	}
+	87.6% {
+		opacity: 1;
+	}
+	88% {
+		opacity: 0;
+	}
+	88.4% {
+		opacity: 1;
+	}
+	88.8% {
+		opacity: 0;
+	}
+	89.2% {
+		opacity: 1;
+	}
+	89.6% {
+		opacity: 0;
+	}
+	90% {
+		opacity: 1;
+	}
+	90.4% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes monster-blue-animation {
 	10% {
 		transform: translateX(375%) translateY(-40%);
 	}
@@ -604,6 +1237,7 @@ body {
 		transform: translateX(365%) translateY(-1200%);
 	}
 }
+
 @keyframes pac-man-mouth {
 	0% {
 		border-left: 30px solid var(--yellow);
@@ -833,7 +1467,6 @@ body {
 .div54 {
 	grid-area: 5 / 7 / 6 / 8;
 	animation: eat-bounty 0.2s forwards 52.8s;
-	/* last one */
 }
 .div55 {
 	grid-area: 5 / 6 / 6 / 7;
@@ -892,7 +1525,7 @@ body {
 }
 .div70 {
 	grid-area: 6 / 10 / 7 / 11;
-	animation: eat-bounty 0.2s forwards 54s;
+	animation: eat-bounty 0.2s forwards 54.5s;
 }
 .div71 {
 	grid-area: 6 / 11 / 7 / 12;
