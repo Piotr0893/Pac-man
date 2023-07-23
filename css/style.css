@@ -55,6 +55,7 @@ body {
 	left: 50%;
 	width: 60px;
 	height: 60px;
+	z-index: 5;
 }
 .square-line {
 	position: absolute;
@@ -322,7 +323,7 @@ body {
 		);
 	background-size: 10px 20px;
 	transform: rotate(180deg);
-	animation: monster-red-wave-red-animation 60s 0.5s linear 1 forwards;
+	animation: monster-red-wave-normal-animation 60s 0.5s linear 1 forwards;
 }
 .monster-red-wave-eaten {
 	position: absolute;
@@ -376,7 +377,7 @@ body {
 		forwards;
 }
 
-.monster-eyes-red {
+.monster-red-eyes {
 	position: absolute;
 	top: 31%;
 	left: 20%;
@@ -386,7 +387,7 @@ body {
 	height: 5px;
 	box-shadow: 0 0 0 3.5px var(--white);
 	-webkit-box-reflect: right 8px;
-	animation: monster-eyes-red 60s 0.5s linear 1 forwards;
+	animation: monster-red-eyes 60s 0.5s linear 1 forwards;
 }
 .monster-red-eyes-eaten {
 	position: absolute;
@@ -418,8 +419,8 @@ body {
 .monster-red-mouth-eaten {
 	position: absolute;
 	bottom: -25%;
-	left: 9%;
-	width: 100%;
+	left: 13%;
+	width: 85%;
 	height: 20px;
 	background-color: var(--white);
 	clip-path: polygon(
@@ -444,8 +445,8 @@ body {
 .monster-red-mouth-eaten-white-blinking {
 	position: absolute;
 	bottom: -25%;
-	left: 9%;
-	width: 100%;
+	left: 13%;
+	width: 85%;
 	height: 20px;
 	background-color: var(--navy);
 	clip-path: polygon(
@@ -472,6 +473,7 @@ body {
 /****************************************************
  ******************** MONSTER BLUE ******************
  ****************************************************/
+
 .map .monster-blue {
 	position: relative;
 	top: 73.5%;
@@ -481,13 +483,12 @@ body {
 	border-radius: 50% 50% 0 0;
 	background: var(--monster-blue);
 	z-index: 1;
-	animation: monster-blue-animation 20s 0.5s linear 1 forwards;
+	animation: monster-blue-animation 60s 0.5s linear 1 forwards;
 }
 
-.monster-blue::before {
-	content: '';
+.monster-blue-wave-normal {
 	position: absolute;
-	bottom: -10px;
+	bottom: -9px;
 	left: 0%;
 	width: 100%;
 	height: 10px;
@@ -507,8 +508,9 @@ body {
 		);
 	background-size: 10px 20px;
 	transform: rotate(180deg);
+	animation: monster-blue-wave-normal 60s 0.5s linear 1 forwards;
 }
-.monster-eyes-blue {
+.monster-blue-eyes {
 	position: absolute;
 	top: 28%;
 	left: 20%;
@@ -518,6 +520,7 @@ body {
 	height: 5px;
 	box-shadow: 0 0 0 3.5px var(--white);
 	-webkit-box-reflect: right 8px;
+	animation: monster-blue-eyes 60s 0.5s linear 1 forwards;
 }
 
 @keyframes pac-man-animation {
@@ -772,10 +775,10 @@ body {
 	21.2% {
 		transform: translateX(-535%) translateY(600%);
 	}
-	21.5% {
+	21.6% {
 		background-color: var(--black);
 	}
-	21.6% {
+	21.7% {
 		transform: translateX(-535%) translateY(870%);
 		background-color: var(--monster-red);
 	}
@@ -971,7 +974,38 @@ body {
 		background: var(--monster-red);
 	}
 }
-
+@keyframes monster-red-wave-normal-animation {
+	0% {
+		opacity: 1;
+	}
+	12.5% {
+		opacity: 1;
+	}
+	12.6% {
+		opacity: 0;
+	}
+	21.6% {
+		opacity: 0;
+	}
+	21.7% {
+		opacity: 1;
+	}
+	62.1% {
+		opacity: 1;
+	}
+	62.2% {
+		opacity: 0;
+	}
+	90.5% {
+		opacity: 0;
+	}
+	90.6% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 @keyframes monster-red-wave-eaten-animation {
 	0% {
 		opacity: 0;
@@ -1126,39 +1160,8 @@ body {
 		opacity: 0;
 	}
 }
-@keyframes monster-red-wave-red-animation {
-	0% {
-		opacity: 1;
-	}
-	12.5% {
-		opacity: 1;
-	}
-	12.6% {
-		opacity: 0;
-	}
-	21.5% {
-		opacity: 0;
-	}
-	21.6% {
-		opacity: 1;
-	}
-	62.1% {
-		opacity: 1;
-	}
-	62.2% {
-		opacity: 0;
-	}
-	90.5% {
-		opacity: 0;
-	}
-	90.6% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-@keyframes monster-eyes-red {
+
+@keyframes monster-red-eyes {
 	0% {
 		opacity: 1;
 	}
@@ -1507,26 +1510,162 @@ body {
  ****************************************************/
 
 @keyframes monster-blue-animation {
-	10% {
+	2% {
 		transform: translateX(375%) translateY(-40%);
 	}
-	20% {
-		transform: translateX(375%) translateY(-380%);
+	3.5% {
+		transform: translateX(375%) translateY(-370%);
 	}
-	30% {
-		transform: translateX(-155%) translateY(-380%);
+	6% {
+		transform: translateX(-160%) translateY(-370%);
 	}
-	50% {
-		transform: translateX(-155%) translateY(-700%);
+	7.5% {
+		transform: translateX(-160%) translateY(-700%);
 	}
-	80% {
+	10% {
 		transform: translateX(365%) translateY(-700%);
 	}
-	100% {
+	12% {
 		transform: translateX(365%) translateY(-1200%);
 	}
+	12.5% {
+		transform: translateX(465%) translateY(-1200%);
+	}
+	16% {
+		transform: translateX(-160%) translateY(-1200%);
+	}
+	18.5% {
+		transform: translateX(-160%) translateY(-1870%);
+	}
+	22.5% {
+		transform: translateX(760%) translateY(-1870%);
+	}
+	24% {
+		transform: translateX(760%) translateY(-1550%);
+	}
+	26.5% {
+		transform: translateX(1300%) translateY(-1550%);
+	}
+	29.5% {
+		transform: translateX(1300%) translateY(-700%);
+	}
+	32% {
+		transform: translateX(760%) translateY(-700%);
+	}
+	34% {
+		transform: translateX(760%) translateY(-1200%);
+	}
+	36% {
+		transform: translateX(365%) translateY(-1200%);
+	}
+	38% {
+		transform: translateX(365%) translateY(-700%);
+	}
+	40.5% {
+		transform: translateX(-160%) translateY(-700%);
+	}
+	43.5% {
+		transform: translateX(-160%) translateY(-1550%);
+	}
+	46% {
+		transform: translateX(365%) translateY(-1550%);
+	}
+	47.5% {
+		transform: translateX(365%) translateY(-1870%);
+	}
+	51.5% {
+		transform: translateX(1300%) translateY(-1870%);
+	}
+	54.5% {
+		transform: translateX(1300%) translateY(-1200%);
+	}
+	57% {
+		transform: translateX(760%) translateY(-1200%);
+	}
+	59.5% {
+		transform: translateX(1300%) translateY(-1200%);
+	}
+	62.1% {
+		background-color: var(--monster-blue);
+	}
+	62.2% {
+		transform: translateX(1300%) translateY(-1870%);
+		background-color: var(--black);
+	}
+	63.4% {
+		transform: translateX(365%) translateY(-1870%);
+	}
+	64% {
+		transform: translateX(365%) translateY(-1550%);
+	}
+	65% {
+		transform: translateX(-160%) translateY(-1550%);
+	}
+	65.6% {
+		transform: translateX(-160%) translateY(-1200%);
+	}
+	66.8% {
+		transform: translateX(570%) translateY(-1200%);
+	}
+	67.2% {
+		transform: translateX(570%) translateY(-950%);
+		background-color: var(--black);
+	}
+	67.3% {
+		background-color: var(--monster-blue);
+	}
+	69.9% {
+		background-color: var(--monster-blue);
+		transform: translateX(570%) translateY(-950%);
+	}
+	71% {
+		transform: translateX(570%) translateY(-1200%);
+	}
+	74% {
+		transform: translateX(1300%) translateY(-1200%);
+	}
+	78% {
+		transform: translateX(1300%) translateY(-40%);
+	}
+	82% {
+		transform: translateX(365%) translateY(-40%);
+	}
+	83.5% {
+		transform: translateX(365%) translateY(-370%);
+	}
+	86% {
+		transform: translateX(-160%) translateY(-370%);
+	}
+	87.5% {
+		transform: translateX(-160%) translateY(-700%);
+	}
+	90.5% {
+		transform: translateX(455%) translateY(-700%);
+	}
+	100% {
+		transform: translateX(455%) translateY(-700%);
+	}
 }
-
+@keyframes monster-blue-wave-normal {
+	0% {
+		opacity: 1;
+	}
+	62.1% {
+		opacity: 1;
+	}
+	62.2% {
+		opacity: 0;
+	}
+	67.2% {
+		opacity: 0;
+	}
+	67.3% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 .bounties {
 	position: absolute;
 	top: 50%;
