@@ -17,12 +17,13 @@
 body {
 	height: 100vh;
 	font-family: 'Press Start 2P', cursive;
+	background-color: var(--black);
 }
 .map .text {
 	position: absolute;
-	top: 60%;
-	left: 37%;
-	font-size: 1.5em;
+	top: 58%;
+	left: 30%;
+	font-size: 2.2em;
 	color: #eeff00;
 	text-shadow: 0px 0px 0 rgb(228, 166, 0), 0px 1px 0 rgb(201, 139, 0),
 		0px 2px 0 rgb(174, 112, 0), 0px 3px 0 rgb(148, 86, 0),
@@ -30,11 +31,108 @@ body {
 		0px 7px 0 rgb(40, -22, 0), 0px 8px 0 rgb(13, -49, 0),
 		0px 9px 8px rgba(0, 0, 0, 0.24), 0px 9px 1px rgba(0, 0, 0, 0.5),
 		0px 0px 8px rgba(0, 0, 0, 0.2);
-	-webkit-animation: text-ready-anim 1.4s 1
+	-webkit-animation: text-ready-anim 1.7s 1
 		cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
-	animation: text-ready-anim 1.4s 1 cubic-bezier(0.55, 0.085, 0.68, 0.53)
+	animation: text-ready-anim 1.7s 1 cubic-bezier(0.55, 0.085, 0.68, 0.53)
 		forwards;
 }
+.score {
+	position: absolute;
+	top: -5%;
+	left: 5%;
+	font-size: 1em;
+	color: var(--white);
+}
+.score .zero {
+	color: var(--black);
+}
+.score > .score-0 {
+	position: absolute;
+	transform: translate(100%, -50%);
+	animation: score-anim-0 4.7s forwards 0s;
+	opacity: 0;
+}
+.score-10 {
+	animation: score-anim 0.5s forwards 0.7s;
+	left: 0%;
+	opacity: 0;
+}
+.score-20 {
+	animation: score-anim 0.4s forwards 1.15s;
+	opacity: 0;
+}
+.score-30 {
+	animation: score-anim 0.6s forwards 1.5s;
+	opacity: 0;
+}
+.score-40 {
+	animation: score-anim 0.6s forwards 2s;
+	opacity: 0;
+}
+.score-50 {
+	animation: score-anim 0.6s forwards 2.5s;
+	opacity: 0;
+}
+.score-60 {
+	animation: score-anim 0.5s forwards 2.95s;
+	opacity: 0;
+}
+.score-70 {
+	animation: score-anim 0.8s forwards 3.4s;
+	opacity: 0;
+}
+.score-80 {
+	animation: score-anim 0.5s forwards 4.1s;
+	opacity: 0;
+}
+.score-90 {
+	animation: score-anim 0.5s forwards 4.4s;
+	opacity: 0;
+}
+.score-100 {
+	animation: score-anim 0.6s forwards 4.7s;
+	opacity: 0;
+}
+.score-110 {
+	animation: score-anim 0.3s forwards 5.1s;
+	opacity: 0;
+}
+.score-120 {
+	animation: score-anim 0.4s forwards 5.4s;
+	opacity: 0;
+}
+.score-130 {
+	animation: score-anim 0.3s forwards 5.8s;
+	opacity: 0;
+}
+.score-140 {
+	animation: score-anim 0.9s forwards 6.1s;
+	opacity: 0;
+}
+
+@keyframes score-anim-0 {
+	0% {
+		opacity: 1;
+	}
+	99% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes score-anim {
+	0% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
 .map {
 	position: relative;
 	top: 50%;
@@ -45,7 +143,7 @@ body {
 	border: 7px double var(--blue);
 	border-radius: 8px;
 	background: var(--black);
-	animation: map-blinking-outside-border 3s 54s 1;
+	animation: map-blinking-outside-border 5s 54s 1;
 }
 .map div {
 	border-radius: 8px;
@@ -59,7 +157,7 @@ body {
 	width: 100px;
 	height: 25px;
 	-webkit-box-reflect: right 176%;
-	animation: map-blinking 3s 54s 1;
+	animation: map-blinking 5s 54s 1;
 }
 .wide-rectangle-2 {
 	border: var(--border);
@@ -68,7 +166,7 @@ body {
 	width: 100px;
 	height: 25px;
 	-webkit-box-reflect: right 178%;
-	animation: map-blinking 3s 54s 1;
+	animation: map-blinking 5s 54s 1;
 }
 .square {
 	border: var(--border);
@@ -77,7 +175,7 @@ body {
 	width: 60px;
 	height: 60px;
 	z-index: 5;
-	animation: map-blinking 3s 54s 1;
+	animation: map-blinking 5s 54s 1;
 }
 .square-line {
 	position: absolute;
@@ -110,14 +208,14 @@ body {
 	width: 85px;
 	height: 25px;
 	z-index: -1;
-	animation: map-blinking 3s 54s 1;
+	animation: map-blinking 5s 54s 1;
 }
 .U-second {
 	top: -13.5px;
 	width: 25px;
 	height: 65px;
 	border-radius: 8px 8px 0px 8px;
-	animation: map-blinking 3s 54s 1;
+	animation: map-blinking 5s 54s 1;
 }
 .U-third {
 	top: -13.5px;
@@ -125,7 +223,7 @@ body {
 	width: 25px;
 	height: 65px;
 	border-radius: 8px 8px 8px 0px;
-	animation: map-blinking 3s 54s 1;
+	animation: map-blinking 5s 54s 1;
 }
 .U-object .U-line-second {
 	top: 28.5px;
@@ -163,7 +261,7 @@ body {
 	width: 181px;
 	height: 25px;
 	z-index: -1;
-	animation: map-blinking 3s 54s 1;
+	animation: map-blinking 5s 54s 1;
 }
 .L-second-A {
 	border-radius: 8px 8px 8px 0px;
@@ -171,7 +269,7 @@ body {
 	height: 103px;
 	top: -27.2px;
 	left: 160px;
-	animation: map-blinking 3s 54s 1;
+	animation: map-blinking 5s 54s 1;
 }
 .L-object-A .L-line-A {
 	top: 53.2px;
@@ -201,7 +299,7 @@ body {
 	width: 181px;
 	height: 25px;
 	z-index: -1;
-	animation: map-blinking 3s 54s 1;
+	animation: map-blinking 5s 54s 1;
 }
 .L-second-B {
 	border-radius: 8px 8px 0px 8px;
@@ -209,7 +307,7 @@ body {
 	height: 103px;
 	top: -27.2px;
 	left: 0px;
-	animation: map-blinking 3s 54s 1;
+	animation: map-blinking 5s 54s 1;
 }
 .L-object-B .L-line-B {
 	top: 53.2px;
@@ -238,7 +336,7 @@ body {
 	border-radius: 8px;
 	width: 181px;
 	height: 25px;
-	animation: map-blinking 3s 54s 1;
+	animation: map-blinking 5s 54s 1;
 }
 .L-second-C {
 	top: 61px;
@@ -246,7 +344,7 @@ body {
 	border-radius: 0px 8px 8px 8px;
 	width: 25px;
 	height: 103px;
-	animation: map-blinking 3s 54s 1;
+	animation: map-blinking 5s 54s 1;
 }
 .L-object-C .L-line-C {
 	top: 63px;
@@ -276,7 +374,7 @@ body {
 	border-radius: 8px;
 	width: 181px;
 	height: 25px;
-	animation: map-blinking 3s 54s 1;
+	animation: map-blinking 5s 54s 1;
 }
 .L-second-D {
 	top: 61px;
@@ -284,7 +382,7 @@ body {
 	border-radius: 8px 0px 8px 8px;
 	width: 25px;
 	height: 103px;
-	animation: map-blinking 3s 54s 1;
+	animation: map-blinking 5s 54s 1;
 }
 .L-object-D .L-line-D {
 	top: 63px;
